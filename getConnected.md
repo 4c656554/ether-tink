@@ -33,7 +33,7 @@ The intent is to create a network of local computers over which a private blockc
 
 *This defines the genesis block for the private blockchain. This must be the same for all participants*
 
-4. On command line run, `geth --networkid 12345 --port 33333 --datadir /path/to/your/directory  init /path/to/your/directory/genesis.json`
+4. On command line run, `geth --datadir /path/to/your/directory --networkid 12345 --port 33333 init /path/to/your/directory/genesis.json`
    *This initialises the first block. You are now primed to connect to the priveate Ethereum p2p network*
 5. Now do:
        `geth --datadir /path/to/your/directory --networkid 12345 --port 33333 `
