@@ -37,14 +37,24 @@ The intent is to create a network of local computers over which a private blockc
    *This initialises the first block. You are now primed to connect to the priveate Ethereum p2p network*
 5. Now do:
        `geth --datadir /path/to/your/directory --networkid 12345 --port 33333 `
-   *This gets the machine ready to find the local network. The networkid and port were arbitrarily chosen when I set up the pi. N.b. `--verbosity 5`  will give lots of messages about the network and what is going on.*
+   *This gets the machine ready to find the local network. The networkid and port were arbitrarily chosen. N.b. `--verbosity 5`  will give lots of messages about the network and what is going on.*
    If unsuccessful, check your firewall (allow connections on TCP port 33333).
 6. Next, in a new command window (leave the other one open):
        `geth --datadir /path/to/your/directory --networkid 12345 --port 33333 attach`
   *This gives you a javascript console to interact with; a `>` prompt* [command reference](https://github.com/ethereum/go-ethereum/wiki/JavaScript-Console#management-api-reference)
 7. Next do:
+
+`admin.nodeInfo()`
+
+This will print out some information about your node, including your EnodeURL, which looks like this:
+
+`enode://6c461262a4cdb658d7852af41a433668dea467da87168390d02e22c6191fc136063a7df859e46a65786de6c3f73670f00d2378b5e17ec3142a84ded8029e1728@192.168.0.1:33333`
+
+Paste this into the wiki (via 192.168.0.1/index.html) and copy someone else's Enode URL
+
+8. Connect to the copied EnodeURL like this:
        `admin.addPeer("enode://6c461262a4cdb658d7852af41a433668dea467da87168390d02e22c6191fc136063a7df859e46a65786de6c3f73670f00d2378b5e17ec3142a84ded8029e1728@192.168.0.1:33333")`
-       Replacing the enode URL with one from the wiki.
+       Replacing the enode URL with one copied from the wiki.
        
   This connects the link (TCP) for your machine in the local network. It creates the first Peer to Peer link for your machine and results in a connection to the RaspberryPi. The address enodeURL was taken from the RPi's node.
 8. Do `admin.peers` to check, you should see a list of connected peers.
