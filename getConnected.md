@@ -1,6 +1,6 @@
 #Ethereum Private Blockchain Tinkering:
 
-Guidlines for getting connected to the private network.
+Guidelines for getting connected to the private network.
 
 ##Overview.
 
