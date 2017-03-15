@@ -1,8 +1,8 @@
 
 
 
-Private network setup:
+**Private network setup:**
 
-See GetConnected.md for guidlines
+See [getConnected.md](https://github.com/4c656554/ether-tink/blob/master/getConnected.md) for guidlines
 
-Contract Examples:
+**Contract Examples:**
